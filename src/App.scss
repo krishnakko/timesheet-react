@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+.pageContainer {
+  background-color: #ebebe6;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  .home {
+    display: none;
+  }
+  .page-Wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.t-dec-none {
+  text-decoration: none;
+}
+
+.pd-0 {
+  padding: 0
+}

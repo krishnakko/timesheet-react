@@ -1,0 +1,27 @@
+@import "../../../../App.scss";
+
+.header-wrapper {
+  nav {
+    margin: auto;
+    border-radius: 0;
+    > div {
+      margin: 0 10px;
+      max-width: 100%;
+    }
+  }
+  .navBarBrandClass {
+    // font-size: 18px;
+    width: 225px;
+  }
+  .userDropdown {
+    a {
+      text-decoration: none;
+    }
+    > a {
+      font-size: 16px;
+    }
+    > div {
+      right: 0;
+    }
+  }
+}
