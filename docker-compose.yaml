@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  frontend:
+    container_name: timesheet-react
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: react-timesheet:v1
+    volumes: 
+      - './:/app'
+    ports:
+      - 3000:3000
+    stdin_open: true
+    environment:
+      - REACT_APP_ENVIRONMENT=development
+      - REACT_APP_API_ENDPOINT=http://localhost:5000/
+    command: npm start
