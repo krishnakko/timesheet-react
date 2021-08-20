@@ -18,6 +18,7 @@
     "@types/react-dom": "^17.0.9",
     "axios": "^0.21.1",
     "bootstrap": "^5.1.0",
+    "env-cmd": "^10.1.0",
     "formik": "^2.2.9",
     "immer": "^9.0.5",
     "node-sass": "^6.0.1",
@@ -38,7 +39,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "export_dynamic_dev": "env-cmd -f .env_dynamic_dev react-scripts build",
+    "export_dynamic": "env-cmd -f .env_dynamic react-scripts build",
+    "export_staging": "env-cmd -f .env_staging react-scripts build",
+    "export_production": "env-cmd -f .env_production react-scripts build"
   },
   "eslintConfig": {
     "extends": [
