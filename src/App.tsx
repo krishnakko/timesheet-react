@@ -20,6 +20,7 @@ import { Route, Router, Switch, useHistory, useLocation } from "react-router-dom
 import logo from './logo.svg';
 import './App.scss';
 import { Header } from "./components/shared/UIComponents/header/header";
+import { SidebarDrawer } from "./components/shared/UIComponents/sideBarDrawer/sideBarDrawer";
 
 
 const drawerWidth = 280;
@@ -61,6 +62,17 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+function MainContent() {
+  return (
+    <div>
+      <div>Hello</div>
+      <div>Hello</div>
+      <div>Hello</div>
+      <div>Hello</div>
+      <div>Hello</div>
+    </div>
+  )
+}
 
 function App() {
   let location = useLocation();
@@ -82,12 +94,20 @@ function App() {
     <ThemeProvider theme={Apptheme}>
       <div className={`pageContainer`}>
         <Header />
-
+        <CssBaseline />
+        <SidebarDrawer />
         {/* <AppBar position="fixed" className={classes.appBar} color="secondary">
           <Toolbar>
             <Header />
           </Toolbar>
         </AppBar> */}
+        {/* <main>
+          <div>Hello</div>
+          <div>Hello</div>
+          <div>Hello</div>
+          <div>Hello</div>
+          <div>Hello</div>
+        </main> */}
       </div>
     </ThemeProvider>
   );

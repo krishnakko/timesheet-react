@@ -1,0 +1,34 @@
+@import "../../../../App.scss";
+.sideBarMainComponent {
+  header {
+    top: $app-bar-height;
+  }
+  .sideDrawerMoreIcon {
+    margin-right: 0px;
+  }
+  .toolbarClass {
+    min-height: 30px;
+    > button {
+      padding: 6px;
+    }
+  }
+  .drawerMainClass {
+    > div {
+      top: $app-bar-height;
+      right: 0;
+      svg {
+        font-size: 20px;
+      }
+      span {
+        font-size: 14px;
+      }
+      // width: 65px !important;
+    }
+  }
+  //   > div:first-child {
+  //     > div {
+  //       top: $app-bar-height;;
+  //       right: 0;
+  //     }
+  //   }
+}

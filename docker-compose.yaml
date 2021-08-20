@@ -14,4 +14,15 @@ services:
     environment:
       - REACT_APP_ENVIRONMENT=development
       - REACT_APP_API_ENDPOINT=http://localhost:5000/
+      - MESSAGING_API_URL=https://messaging.learnship.today
+      - MESSAGING_API_KEY=4UASBqoxLy6xGYbhy7kpc4zoSNaQ2fDV7xP8oGl3
+      - jira_url=https://learnship.atlassian.net
+      - jira_username=navinkumar.jayaraman@learnship.com
+      - jira_secret=k1yxu4EMIL4qJnFgEWPp0D54
+      - db_conn_string=mysql+pymysql://root:mypassword@mysql-timsheet-db:3306/timesheet
+      - folder_path=/usr/local/timesheet/src
+      - prod_db_conn_string=mysql+pymysql://timesheetuser:xApZK7UgLL_g@localhost:3306/timesheet
+      - power_bi_client_id=3e591fd6-9ed3-449e-a093-1f694bfe1605
+      - power_bi_username=insightreports@learnship.com
+      - power_bi_password=LSGE@pbi01
     command: npm start
