@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React from 'react';
 import {
     Divider,
@@ -25,7 +26,8 @@ import {
     GroupWorkOutlined,
     SystemUpdateAltOutlined
 } from '@material-ui/icons';
-import { Link, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./sideBarItems.scss";
 
 
 import './sideBarItems.scss';
@@ -46,7 +48,30 @@ const useStyles = styles.makeStyles((theme: styles.Theme) =>
 export function SidebarDrawerItems() {
 
     const classes = useStyles();
+    const curPath = window.location.pathname
     const [openItems, setOpenItems] = React.useState<string[]>([]);
+
+    React.useEffect(() => {
+        const path = curPath;
+        const items: any = {
+            "item1": ["add-timesheet", "timesheet-list", "report"],
+            "item2": ["all-timesheet-list", "team-timesheet-list"],
+            "item3": ["department", "project", "employee"],
+            "item4": ["db-setup"]
+        };
+        for (var key in items) {
+            console.log(`${key}: ${items[key]}`);
+            const baseLinks = items[key];
+            // eslint-disable-next-line no-loop-func
+            baseLinks.filter((li: string) => {
+                if (path.includes(li)) {
+                    setOpenItems([...openItems, key])
+                }
+            })
+        }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [curPath])
 
     const handleItemOpen = (item: string) => {
         if (openItems.includes(item)) {
@@ -69,20 +94,20 @@ export function SidebarDrawerItems() {
                 </ListItem>
                 <Collapse in={openItems.includes("item1")} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/add-timesheet', state: {} }}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/add-timesheet', state: {} }}>
 
                             <ListItemIcon>
                                 <AddCircleOutlineOutlined />
                             </ListItemIcon>
                             <ListItemText primary="Add" />
                         </ListItem>
-                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/timesheet-list', state: {} }}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/timesheet-list', state: {} }}>
                             <ListItemIcon>
                                 <ListAlt />
                             </ListItemIcon>
                             <ListItemText primary="Timesheet List" />
                         </ListItem>
-                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/report', state: {} }}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/report', state: {} }}>
                             <ListItemIcon>
                                 <LocalLibraryOutlined />
                             </ListItemIcon>
@@ -99,13 +124,13 @@ export function SidebarDrawerItems() {
                 </ListItem>
                 <Collapse in={openItems.includes("item2")} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/all-timesheet-list', state: {} }}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/all-timesheet-list', state: {} }}>
                             <ListItemIcon>
                                 <GridOnOutlined />
                             </ListItemIcon>
                             <ListItemText primary="All Timesheet" />
                         </ListItem>
-                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/team-timesheet-list', state: {} }}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/team-timesheet-list', state: {} }}>
                             <ListItemIcon>
                                 <DnsOutlined />
                             </ListItemIcon>
@@ -126,19 +151,19 @@ export function SidebarDrawerItems() {
                 </ListItem>
                 <Collapse in={openItems.includes("item3")} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/department', state: {} }}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/department', state: {} }}>
                             <ListItemIcon>
                                 <GroupWorkOutlined />
                             </ListItemIcon>
                             <ListItemText primary="Department" />
                         </ListItem>
-                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/project', state: {} }}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/project', state: {} }}>
                             <ListItemIcon>
                                 <LaptopChromebookOutlined />
                             </ListItemIcon>
                             <ListItemText primary="Project" />
                         </ListItem>
-                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/employee', state: {} }}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/employee', state: {} }}>
                             <ListItemIcon>
                                 <PeopleAltOutlined />
                             </ListItemIcon>
@@ -155,7 +180,7 @@ export function SidebarDrawerItems() {
                 </ListItem>
                 <Collapse in={openItems.includes("item4")} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/db-setup', state: {} }}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/db-setup', state: {} }}>
                             <ListItemIcon>
                                 <ViewListOutlined />
                             </ListItemIcon>

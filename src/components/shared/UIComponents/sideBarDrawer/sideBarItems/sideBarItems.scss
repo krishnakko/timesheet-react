@@ -1,6 +1,11 @@
 .listItemClass {
   // padding: 0;
   padding-left: 16px;
+  a,
+  span {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 .adminInterfaceStart {
@@ -11,4 +16,8 @@
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
+}
+
+.activeLink {
+  background: #c6eaeb !important;
 }
