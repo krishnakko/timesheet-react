@@ -5,7 +5,7 @@ import {
     ListItem,
     Collapse,
     ListItemIcon,
-    ListItemText
+    ListItemText,
 } from "@material-ui/core";
 import * as styles from '@material-ui/core/styles';
 import {
@@ -25,6 +25,8 @@ import {
     GroupWorkOutlined,
     SystemUpdateAltOutlined
 } from '@material-ui/icons';
+import { Link, useParams } from "react-router-dom";
+
 
 import './sideBarItems.scss';
 
@@ -47,7 +49,6 @@ export function SidebarDrawerItems() {
     const [openItems, setOpenItems] = React.useState<string[]>([]);
 
     const handleItemOpen = (item: string) => {
-        console.log("item")
         if (openItems.includes(item)) {
             const newItems = openItems.filter(itemName => itemName !== item)
             setOpenItems(newItems);
@@ -68,19 +69,20 @@ export function SidebarDrawerItems() {
                 </ListItem>
                 <Collapse in={openItems.includes("item1")} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItem button className={`${classes.nested} listItemClass`}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/add-timesheet', state: {} }}>
+
                             <ListItemIcon>
                                 <AddCircleOutlineOutlined />
                             </ListItemIcon>
                             <ListItemText primary="Add" />
                         </ListItem>
-                        <ListItem button className={`${classes.nested} listItemClass`}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/timesheet-list', state: {} }}>
                             <ListItemIcon>
                                 <ListAlt />
                             </ListItemIcon>
                             <ListItemText primary="Timesheet List" />
                         </ListItem>
-                        <ListItem button className={`${classes.nested} listItemClass`}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/report', state: {} }}>
                             <ListItemIcon>
                                 <LocalLibraryOutlined />
                             </ListItemIcon>
@@ -97,13 +99,13 @@ export function SidebarDrawerItems() {
                 </ListItem>
                 <Collapse in={openItems.includes("item2")} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItem button className={`${classes.nested} listItemClass`}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/all-timesheet-list', state: {} }}>
                             <ListItemIcon>
                                 <GridOnOutlined />
                             </ListItemIcon>
                             <ListItemText primary="All Timesheet" />
                         </ListItem>
-                        <ListItem button className={`${classes.nested} listItemClass`}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/team-timesheet-list', state: {} }}>
                             <ListItemIcon>
                                 <DnsOutlined />
                             </ListItemIcon>
@@ -124,19 +126,19 @@ export function SidebarDrawerItems() {
                 </ListItem>
                 <Collapse in={openItems.includes("item3")} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItem button className={`${classes.nested} listItemClass`}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/department', state: {} }}>
                             <ListItemIcon>
                                 <GroupWorkOutlined />
                             </ListItemIcon>
                             <ListItemText primary="Department" />
                         </ListItem>
-                        <ListItem button className={`${classes.nested} listItemClass`}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/project', state: {} }}>
                             <ListItemIcon>
                                 <LaptopChromebookOutlined />
                             </ListItemIcon>
                             <ListItemText primary="Project" />
                         </ListItem>
-                        <ListItem button className={`${classes.nested} listItemClass`}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/employee', state: {} }}>
                             <ListItemIcon>
                                 <PeopleAltOutlined />
                             </ListItemIcon>
@@ -153,7 +155,7 @@ export function SidebarDrawerItems() {
                 </ListItem>
                 <Collapse in={openItems.includes("item4")} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItem button className={`${classes.nested} listItemClass`}>
+                        <ListItem button className={`${classes.nested} listItemClass`} component={Link} to={{ pathname: '/db-setup', state: {} }}>
                             <ListItemIcon>
                                 <ViewListOutlined />
                             </ListItemIcon>

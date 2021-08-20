@@ -1,12 +1,11 @@
-import {
-    makeStyles,
-    Theme,
-    createStyles,
-} from "@material-ui/core/styles";
+import { Route, Router, Switch, useHistory, useLocation } from "react-router-dom";
+import * as styles from "@material-ui/core/styles";
+import { AddTimeSheet } from "../core/addTimeSheet/addTimeSheet";
+
 const drawerWidth = 280;
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
+const useStyles = styles.makeStyles((theme: styles.Theme) =>
+    styles.createStyles({
         root: {
             display: "flex",
         },
@@ -45,11 +44,9 @@ const useStyles = makeStyles((theme: Theme) =>
 export function MainContent() {
     return (
         <div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
+            <Route exact path="/add-timesheet">
+                <AddTimeSheet />
+            </Route>
         </div>
     )
 }

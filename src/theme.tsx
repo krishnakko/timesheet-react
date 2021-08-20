@@ -1,6 +1,6 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 
-const Apptheme = createMuiTheme({
+const Apptheme = createTheme({
     typography: {
         button: {
             textTransform: "none",
