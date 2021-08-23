@@ -25,7 +25,7 @@ const useStyles = styles.makeStyles((theme: styles.Theme) =>
 export function SidebarDrawerItems() {
 
     const classes = useStyles();
-    const curPath = window.location.pathname
+    const curPath = window.location.pathname;
     const [openItems, setOpenItems] = React.useState<string[]>([]);
 
     React.useEffect(() => {
@@ -126,13 +126,13 @@ export function SidebarDrawerItems() {
                 </core.ListItem>
                 <core.Collapse in={openItems.includes("item3")} timeout="auto" unmountOnExit>
                     <core.List component="div" disablePadding>
-                        <core.ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/department', state: {} }}>
+                        <core.ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/departments', state: {} }}>
                             <core.ListItemIcon>
                                 <icons.GroupWorkOutlined />
                             </core.ListItemIcon>
                             <core.ListItemText primary="Department" />
                         </core.ListItem>
-                        <core.ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/project', state: {} }}>
+                        <core.ListItem button className={`${classes.nested} listItemClass`} component={NavLink} activeClassName="activeLink" to={{ pathname: '/projects', state: {} }}>
                             <core.ListItemIcon>
                                 <icons.LaptopChromebookOutlined />
                             </core.ListItemIcon>
