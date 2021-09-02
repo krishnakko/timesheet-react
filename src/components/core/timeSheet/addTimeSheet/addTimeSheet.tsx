@@ -209,7 +209,7 @@ export function AddTimeSheet(props: any) {
             <div className="timesheetsDiv">
                 {accordionTimesheetForm({})}
                 {/* <styles.ThemeProvider theme={theme2}> */}
-                    {/* <core.TextField
+                {/* <core.TextField
                         id="description"
                         multiline
                         rows={4}
@@ -222,6 +222,9 @@ export function AddTimeSheet(props: any) {
                         // onBlur={handleBlur}
                     /> */}
                 {/* </styles.ThemeProvider> */}
+                <core.TextField id="standard-basic" label="Standard" />
+                <core.TextField id="filled-basic" label="Filled" variant="filled" />
+                <core.TextField id="outlined-basic" label="Outlined" variant="outlined" />
             </div>
         </div>
     )

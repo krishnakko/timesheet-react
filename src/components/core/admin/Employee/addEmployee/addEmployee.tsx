@@ -1,24 +1,24 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 import { Link } from "react-router-dom";
-import './employee.scss';
+import './addEmployee.scss';
 
 
-export function Employee(props: any) {
+export function AddEmployee(props: any) {
 
     return (
-        <div className="employeeMainDiv">
+        <div>
             <div className="addLink">
                 <Button
                     className="hoverBgButtonLinkForm"
                 >
-                    <Link to="/employee/add">
-                        Add Employee
+                    <Link to="/employee">
+                        Employee List
                     </Link>
                 </Button>
             </div>
 
-            <div>In Employee LIST PAGE</div>
-        </div>
+            <div>In Add Employee PAGE.</div>
+            </div>
     )
 }

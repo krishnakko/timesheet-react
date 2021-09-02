@@ -8,6 +8,9 @@ import { TeamTimeSheet } from "../core/reports/teamTimeSheet/teamTimeSheet";
 import { Departments } from "../core/admin/Department/department";
 import { Employee } from "../core/admin/Employee/employee";
 import { Projects } from "../core/admin/Project/project";
+import { AddEditDepartment } from "../core/admin/Department/addDepartment/addDepartment";
+import { AddEmployee } from "../core/admin/Employee/addEmployee/addEmployee";
+import { AddProject } from "../core/admin/Project/addProject/addProject";
 
 const drawerWidth = 280;
 
@@ -69,11 +72,20 @@ export function MainContent() {
             <Route exact path="/departments">
                 <Departments />
             </Route>
+            <Route exact path="/departments/add">
+                <AddEditDepartment />
+            </Route>
             <Route exact path="/employee">
                 <Employee />
             </Route>
+            <Route exact path="/employee/add">
+                <AddEmployee />
+            </Route>
             <Route exact path="/projects">
                 <Projects />
+            </Route>
+            <Route exact path="/projects/add">
+                <AddProject />
             </Route>
         </div>
     )

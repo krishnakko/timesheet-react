@@ -1,0 +1,25 @@
+.poolPopupDiv {
+  z-index: 99999 !important;
+
+  //   > div:first-child {
+  //     padding: 10px 20px;
+  //   }
+
+  > div {
+    > div:first-child {
+      max-width: 704px;
+      width: -webkit-fill-available;
+    }
+
+    > div:last-child {
+      padding: 10px 20px;
+      border-radius: 0;
+
+      h6 {
+        font-weight: 500;
+        font-family: "Poppins-SemiBold";
+        font-size: 24px;
+      }
+    }
+  }
+}

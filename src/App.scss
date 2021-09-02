@@ -70,3 +70,33 @@ $app-bar-height: 56px;
 .pd-0 {
   padding: 0;
 }
+
+main {
+  padding: 5px 10px !important;
+  .addLink {
+    padding: 10px 0px;
+    > button {
+      background-color: #42babd;
+      &:hover {
+        background: #8bc7c9;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .hoverBgButtonLinkForm {
+    padding: 10px 24px !important;
+    color: #424242 !important;
+    font-size: 14px !important;
+    font-family: "NotoSans-SemiBold" !important;
+    &:hover {
+      background: #c6eaeb !important;
+    }
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}
